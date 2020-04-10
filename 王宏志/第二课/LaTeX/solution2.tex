@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+%\pagestyle{fancy}
+\usepackage{lastpage}
+\usepackage[left = 25mm,right = 25mm,width = 150mm,top = 30mm,bottom = 30mm]{geometry}
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{amsmath}
+\usepackage[UTF8]{ctex}
+
+\begin{document}
+(1)即证 $\exists c_1, c_2 > 0,n_0 \quad s.t. \forall n > n_0, c_1 f(n) \leq f(n) + o(f(n)) \leq c_2 f(n)$
+
+由定义知$\exists n_1, s.t. \forall n > n_1, \forall c > 0,0 \leq o(f(n)) \leq c f(n)$ 
+
+取$c = c_0 > 0$，即$ \forall n > n_1, 0 \leq o(f(n)) \leq c_0 f(n)$
+
+于是可以取$c_1 = 1, c_2 = c + 1, n_0 = n_1$，有$\forall n > n_0, c_1 f(n) \leq f(n) + o(f(n)) \leq c_2 f(n)$，得证
+
+\vspace{1cm}
+
+(2)即证$\exists c_4 > 0, n_2, s.t.\forall n > n_2,0 \leq \theta(f(n)) + O(g(n)) \leq c_4 max\left \{ f(n),g(n) \right \}$
+
+由定义，$\exists c_1, c_2 > 0,n_0 \quad s.t. \forall n > n_0, c_1 f(n) \leq \theta(f(n))\leq c_2 f(n)$，以及$\forall c_3 > 0,n_1 \quad s.t. \forall n > n_1, 0 \leq O(g(n)) \leq c_3 g(n)$
+
+进而有$\exists n_3 = max \left \{ n,n_0 \right \} s.t. \forall n > n_3, c_1 f(n) \leq \theta (f(n)) + O(g(n)) \leq c_2 f(n) + c_3 g(n)$
+
+取$n_0 = n_2, c_3 = 1, c_4 = c_2 + 1$即可
+
+\vspace{1cm}
+
+(3)由定义，$\exists c_1, c_2 > 0,n_0 \quad s.t. \forall n > n_0, c_1 f(n) \leq \theta(f(n))\leq c_2 f(n)$，以及$\forall c_3 > 0,n_1 \quad s.t. \forall n > n_1, 0 \leq O(g(n)) \leq c_3 g(n)$
+
+取$c_3 = \frac{c_1}{2}$，于是有$0 \leq O(g(n)) \leq c_3 g(n) = \frac{c_1}{2} g(n) < c_1 f(n) \leq \theta(f(n))\leq c_2 f(n)$，得证
+
+\vspace{1cm}
+
+(4)$\lim\limits_{x \to \infty} \frac{\log_k n}{n} = \lim\limits_{x \to \infty} \frac{1}{nlnk} = 0$，得证
+
+\vspace{1cm}
+
+(5)由Strling公式知$n! \sim \sqrt{2\pi n} \left( \frac{n}{e}\right)^n $，于是$\log n! \sim \frac{1}{2} \log{2\pi n} + n(\log n - \log e) = \theta(n \log n)$
+
+
+\end{document}
